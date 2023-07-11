@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{55BED679-FC95-467B-8E3B-EEB7A21A5661}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>game</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\dxlib;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\dxlib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\dxlib;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\dxlib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\aqua\src;src;</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DisableSpecificWarnings>4099;4100;26812;6386;26451;6385;26495;</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\aqua\src;src;</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DisableSpecificWarnings>4099;4100;26812;6386;26451;6385;26495;</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aqua\aqua.vcxproj">
+      <Project>{803e42f5-753c-480d-9eed-741f74b7aad7}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Game\game.cpp" />
+    <ClCompile Include="src\Game\GameObject\BulletManager\Bullet\DirectionBullet\direction_bullet.cpp" />
+    <ClCompile Include="src\Game\GameObject\BulletManager\Bullet\FireworkBullet\firework_bullet.cpp" />
+    <ClCompile Include="src\Game\GameObject\BulletManager\Bullet\HomingBullet\homing_bullet.cpp" />
+    <ClCompile Include="src\Game\GameObject\CameraManager\camera_manager.cpp" />
+    <ClCompile Include="src\Game\GameObject\EffectManager\Effect\BulletSpawn\bullet_spawn.cpp" />
+    <ClCompile Include="src\Game\GameObject\EffectManager\Effect\Damage\damage.cpp" />
+    <ClCompile Include="src\Game\GameObject\EffectManager\Effect\DeadEnemy\dead_enemy.cpp" />
+    <ClCompile Include="src\Game\GameObject\EffectManager\Effect\effect.cpp" />
+    <ClCompile Include="src\Game\GameObject\EffectManager\Effect\GetItem\get_item.cpp" />
+    <ClCompile Include="src\Game\GameObject\EffectManager\Effect\Laser\laser.cpp" />
+    <ClCompile Include="src\Game\GameObject\EffectManager\Effect\Ripple\ripple.cpp" />
+    <ClCompile Include="src\Game\GameObject\EffectManager\effect_manager.cpp" />
+    <ClCompile Include="src\Game\GameObject\EffectManager\Effect\Darkness\darkness.cpp" />
+    <ClCompile Include="src\Game\GameObject\BulletManager\Bullet\bullet.cpp" />
+    <ClCompile Include="src\Game\GameObject\BulletManager\Bullet\NormalBullet\normal_bullet.cpp" />
+    <ClCompile Include="src\Game\GameObject\BulletManager\bullet_manager.cpp" />
+    <ClCompile Include="src\Game\GameObject\InterfaceManager\UI\Frame\frame.cpp" />
+    <ClCompile Include="src\Game\GameObject\InterfaceManager\UI\GameClear\game_clear.cpp" />
+    <ClCompile Include="src\Game\GameObject\InterfaceManager\UI\GameOver\game_over.cpp" />
+    <ClCompile Include="src\Game\GameObject\InterfaceManager\UI\ShowMessage\show_message.cpp" />
+    <ClCompile Include="src\Game\GameObject\InterfaceManager\UI\Score\score.cpp" />
+    <ClCompile Include="src\Game\GameObject\InterfaceManager\UI\ui.cpp" />
+    <ClCompile Include="src\Game\GameObject\InterfaceManager\ui_manager.cpp" />
+    <ClCompile Include="src\Game\GameObject\ItemManager\Item\AddDirection\add_direction.cpp" />
+    <ClCompile Include="src\Game\GameObject\ItemManager\Item\IntervalShortening\interval_shortening.cpp" />
+    <ClCompile Include="src\Game\GameObject\ItemManager\Item\item.cpp" />
+    <ClCompile Include="src\Game\GameObject\ItemManager\Item\LaserSpeed\laserspeed.cpp" />
+    <ClCompile Include="src\Game\GameObject\ItemManager\item_manager.cpp" />
+    <ClCompile Include="src\Game\GameObject\ItemManager\Item\LaserMeter\lasermeter.cpp" />
+    <ClCompile Include="src\Game\GameObject\SceneManager\Scene\3_Result\result.cpp" />
+    <ClCompile Include="src\Game\GameObject\SoundManager\sound_creater.cpp" />
+    <ClCompile Include="src\Game\GameObject\UnitManager\Unit\Enemy\Normal\normal.cpp" />
+    <ClCompile Include="src\Game\GameObject\UnitManager\Unit\Enemy\enemy.cpp" />
+    <ClCompile Include="src\Game\GameObject\UnitManager\Unit\Enemy\Star\star.cpp" />
+    <ClCompile Include="src\Game\GameObject\UnitManager\Unit\Enemy\FinalBoss\final_boss.cpp" />
+    <ClCompile Include="src\Game\GameObject\UnitManager\Unit\Enemy\FireWork\fire_work.cpp" />
+    <ClCompile Include="src\Game\GameObject\UnitManager\Unit\Enemy\FireWorkTough\fire_work_tough.cpp" />
+    <ClCompile Include="src\Game\GameObject\UnitManager\Unit\Enemy\MiniBoss\mini_boss.cpp" />
+    <ClCompile Include="src\Game\GameObject\UnitManager\Unit\Enemy\NormalTough\normal_tough.cpp" />
+    <ClCompile Include="src\Game\GameObject\UnitManager\unit_manager.cpp" />
+    <ClCompile Include="src\Game\GameObject\Field\field.cpp" />
+    <ClCompile Include="src\Game\GameObject\UnitManager\Unit\Player\player.cpp" />
+    <ClCompile Include="src\Game\GameObject\SceneManager\Scene\2_GameMain\game_main.cpp" />
+    <ClCompile Include="src\Game\GameObject\SceneManager\Scene\scene.cpp" />
+    <ClCompile Include="src\Game\GameObject\SceneManager\Scene\1_Title\title.cpp" />
+    <ClCompile Include="src\Game\GameObject\SceneManager\scene_manager.cpp" />
+    <ClCompile Include="src\Game\GameObject\UnitManager\Unit\unit.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Game\game.h" />
+    <ClInclude Include="src\Game\GameObject\BulletManager\Bullet\DirectionBullet\direction_bullet.h" />
+    <ClInclude Include="src\Game\GameObject\BulletManager\Bullet\FireworkBullet\firework_bullet.h" />
+    <ClInclude Include="src\Game\GameObject\BulletManager\Bullet\HomingBullet\homing_bullet.h" />
+    <ClInclude Include="src\Game\GameObject\CameraManager\camera_manager.h" />
+    <ClInclude Include="src\Game\GameObject\EffectManager\Effect\BulletSpawn\bullet_spawn.h" />
+    <ClInclude Include="src\Game\GameObject\EffectManager\Effect\Damage\damage.h" />
+    <ClInclude Include="src\Game\GameObject\EffectManager\Effect\DeadEnemy\dead_enemy.h" />
+    <ClInclude Include="src\Game\GameObject\EffectManager\Effect\effect.h" />
+    <ClInclude Include="src\Game\GameObject\EffectManager\Effect\GetItem\get_item.h" />
+    <ClInclude Include="src\Game\GameObject\EffectManager\Effect\Laser\laser.h" />
+    <ClInclude Include="src\Game\GameObject\EffectManager\Effect\Ripple\ripple.h" />
+    <ClInclude Include="src\Game\GameObject\EffectManager\effect_manager.h" />
+    <ClInclude Include="src\Game\GameObject\EffectManager\Effect\Darkness\darkness.h" />
+    <ClInclude Include="src\Game\GameObject\BulletManager\Bullet\bullet.h" />
+    <ClInclude Include="src\Game\GameObject\BulletManager\Bullet\NormalBullet\normal_bullet.h" />
+    <ClInclude Include="src\Game\GameObject\BulletManager\bullet_manager.h" />
+    <ClInclude Include="src\Game\GameObject\Field\field.h" />
+    <ClInclude Include="src\Game\GameObject\InterfaceManager\UI\Frame\frame.h" />
+    <ClInclude Include="src\Game\GameObject\InterfaceManager\UI\GameClear\game_clear.h" />
+    <ClInclude Include="src\Game\GameObject\InterfaceManager\UI\GameOver\game_over.h" />
+    <ClInclude Include="src\Game\GameObject\InterfaceManager\UI\ShowMessage\show_message.h" />
+    <ClInclude Include="src\Game\GameObject\InterfaceManager\UI\Score\score.h" />
+    <ClInclude Include="src\Game\GameObject\InterfaceManager\UI\ui.h" />
+    <ClInclude Include="src\Game\GameObject\InterfaceManager\ui_manager.h" />
+    <ClInclude Include="src\Game\GameObject\ItemManager\Item\AddDirection\add_direction.h" />
+    <ClInclude Include="src\Game\GameObject\ItemManager\Item\IntervalShortening\interval_shortening.h" />
+    <ClInclude Include="src\Game\GameObject\ItemManager\Item\item.h" />
+    <ClInclude Include="src\Game\GameObject\ItemManager\Item\LaserSpeed\laserspeed.h" />
+    <ClInclude Include="src\Game\GameObject\ItemManager\item_manager.h" />
+    <ClInclude Include="src\Game\GameObject\ItemManager\Item\LaserMeter\lasermeter.h" />
+    <ClInclude Include="src\Game\GameObject\SceneManager\Scene\3_Result\result.h" />
+    <ClInclude Include="src\Game\GameObject\SoundManager\sound_creater.h" />
+    <ClInclude Include="src\Game\GameObject\UnitManager\Unit\Enemy\Normal\normal.h" />
+    <ClInclude Include="src\Game\GameObject\UnitManager\Unit\Enemy\enemy.h" />
+    <ClInclude Include="src\Game\GameObject\UnitManager\Unit\Enemy\Star\star.h" />
+    <ClInclude Include="src\Game\GameObject\UnitManager\Unit\Enemy\FinalBoss\final_boss.h" />
+    <ClInclude Include="src\Game\GameObject\UnitManager\Unit\Enemy\FireWork\fire_work.h" />
+    <ClInclude Include="src\Game\GameObject\UnitManager\Unit\Enemy\FireWorkTough\fire_work_tough.h" />
+    <ClInclude Include="src\Game\GameObject\UnitManager\Unit\Enemy\MiniBoss\mini_boss.h" />
+    <ClInclude Include="src\Game\GameObject\UnitManager\Unit\Enemy\NormalTough\normal_tough.h" />
+    <ClInclude Include="src\Game\GameObject\UnitManager\unit_manager.h" />
+    <ClInclude Include="src\Game\GameObject\UnitManager\Unit\Player\player.h" />
+    <ClInclude Include="src\Game\GameObject\SceneManager\Scene\2_GameMain\game_main.h" />
+    <ClInclude Include="src\Game\GameObject\SceneManager\Scene\scene.h" />
+    <ClInclude Include="src\Game\GameObject\SceneManager\Scene\1_Title\title.h" />
+    <ClInclude Include="src\Game\GameObject\SceneManager\scene_manager.h" />
+    <ClInclude Include="src\Game\GameObject\UnitManager\Unit\unit.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
